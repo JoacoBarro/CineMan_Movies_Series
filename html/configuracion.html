@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Configuración - CINEMAN</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+
+<body>
+    <button id="sidebarToggle" class="sidebar-toggle">☰</button>
+    
+    <div id="sidebarOverlay" class="sidebar-overlay"></div>
+    
+    <div id="sidebar" class="sidebar">
+        <div class="sidebar-profile">
+            <div class="profile-image">
+                <img src="../images/profile_photo.jpeg" alt="Profile">
+            </div>
+            <div class="profile-info">
+                <h3 class="profile-username">Joaquin Barro</h3>
+                <p class="profile-email">IngJoaquinBarro@gmail.com</p>
+            </div>
+        </div>
+        <hr class="profile-divider">
+        <nav class="sidebar-nav">
+            <ul>
+                <li><a href="inicio.html" class="sidebar-link">🏠 Inicio</a></li>
+                <li><a href="favoritos.html" class="sidebar-link">❤️ Favoritos</a></li>
+                <li><a href="peliculas.html" class="sidebar-link">🎬 Películas</a></li>
+                <li><a href="series.html" class="sidebar-link">📺 Series</a></li>
+                <li><a href="#" class="sidebar-link active" data-page="settings">⚙️ Configuración</a></li>
+                <li><a href="#" class="sidebar-link">🚪 Salir</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1><a href="inicio.html" class="logo-link">CINEMAN</a></h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="nosotros.html">Nosotros</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section id="settings-section">
+            <h2></h2>
+            <div class="settings-container">
+                <div class="settings-group">
+                    <h3>Cuenta</h3>
+                    <div class="setting-item">
+                        <div class="setting-label">
+                            <span class="setting-title">Nombre de Usuario</span>
+                            <span class="setting-value">Joaquin Barro</span>
+                        </div>
+                        <button class="setting-btn">Cambiar</button>
+                    </div>
+                    <div class="setting-item">
+                        <div class="setting-label">
+                            <span class="setting-title">Email</span>
+                            <span class="setting-value">IngJoaquinBarro@gmail.com</span>
+                        </div>
+                        <button class="setting-btn">Cambiar</button>
+                    </div>
+                    <div class="setting-item">
+                        <div class="setting-label">
+                            <span class="setting-title">Contraseña</span>
+                            <span class="setting-value">••••••••</span>
+                        </div>
+                        <button class="setting-btn">Cambiar</button>
+                    </div>
+                </div>
+
+                <div class="settings-group">
+                    <h3>Preferencias</h3>
+                    <div class="setting-item">
+                        <div class="setting-label">
+                            <span class="setting-title">Idioma</span>
+                            <span class="setting-value">Español</span>
+                        </div>
+                        <button class="setting-btn">Cambiar</button>
+                    </div>
+                    <div class="setting-item">
+                        <div class="setting-label">
+                            <span class="setting-title">Modo Oscuro</span>
+                            <span class="setting-value">Activado</span>
+                        </div>
+                        <button class="setting-btn">Desactivar</button>
+                    </div>
+                    <div class="setting-item">
+                        <div class="setting-label">
+                            <span class="setting-title">Notificaciones</span>
+                            <span class="setting-value">Activadas</span>
+                        </div>
+                        <button class="setting-btn">Desactivar</button>
+                    </div>
+                </div>
+
+                <div class="settings-group">
+                    <h3>Privacidad y Seguridad</h3>
+                    <div class="setting-item">
+                        <div class="setting-label">
+                            <span class="setting-title">Perfil Privado</span>
+                            <span class="setting-value">Desactivado</span>
+                        </div>
+                        <button class="setting-btn">Activar</button>
+                    </div>
+                    <div class="setting-item">
+                        <div class="setting-label">
+                            <span class="setting-title">Compartir Historial</span>
+                            <span class="setting-value">Activado</span>
+                        </div>
+                        <button class="setting-btn">Desactivar</button>
+                    </div>
+                </div>
+
+                <div class="settings-group">
+                    <h3>Otras Opciones</h3>
+                    <div class="setting-item">
+                        <div class="setting-label">
+                            <span class="setting-title">Limpiar Historial</span>
+                            <span class="setting-value">Última limpieza: hace 7 días</span>
+                        </div>
+                        <button class="setting-btn danger">Limpiar Ahora</button>
+                    </div>
+                    <div class="setting-item">
+                        <div class="setting-label">
+                            <span class="setting-title">Descargar Datos</span>
+                            <span class="setting-value">Exportar tu información</span>
+                        </div>
+                        <button class="setting-btn">Descargar</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-text">
+                <p>&copy; Joaquin Barro - CINEMAN. Derechos Reservados.</p>
+            </div>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/joaquinbarro/" target="_blank">LinkedIn</a>
+                <a href="#" target="_blank">GitHub</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/app.js"></script>
+</body>
+</html>

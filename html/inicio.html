@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CINEMAN - Portal de Películas</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+
+<body>
+    <button id="sidebarToggle" class="sidebar-toggle">☰</button>
+    
+    <div id="sidebarOverlay" class="sidebar-overlay"></div>
+    
+    <div id="sidebar" class="sidebar">
+        <div class="sidebar-profile">
+            <div class="profile-image">
+                <img src="../images/profile_photo.jpeg" alt="Profile">
+            </div>
+            <div class="profile-info">
+                <h3 class="profile-username">Joaquin Barro</h3>
+                <p class="profile-email">IngJoaquinBarro@gmail.com</p>
+            </div>
+        </div>
+        <hr class="profile-divider">
+        <nav class="sidebar-nav">
+            <ul>
+                <li><a href="#" class="sidebar-link" data-page="home">🏠 Inicio</a></li>
+                <li><a href="favoritos.html" class="sidebar-link">❤️ Favoritos</a></li>
+                <li><a href="ratings.html" class="sidebar-link">⭐ Ratings</a></li>
+                <li><a href="peliculas.html" class="sidebar-link">🎬 Películas</a></li>
+                <li><a href="series.html" class="sidebar-link">📺 Series</a></li>
+                <li><a href="configuracion.html" class="sidebar-link">⚙️ Configuración</a></li>
+                <li><a href="#" class="sidebar-link" data-page="exit">🚪 Salir</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1><a href="#" class="logo-link" data-page="home">CINEMAN</a></h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="nosotros.html" class="active">Nosotros</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section id="about-section" style="display: none;">
+            <h2>Sobre CINEMAN</h2>
+            <div class="about-container">
+                <div class="about-header">
+                    <h1>Bienvenido a CINEMAN</h1>
+                    <p class="tagline">Tu plataforma definitiva para descubrir películas y series</p>
+                </div>
+
+                <div class="about-content">
+                    <div class="about-section-item">
+                        <div class="about-icon">🎬</div>
+                        <h3>Nuestra Misión</h3>
+                        <p>En CINEMAN, nos dedicamos a democratizar el acceso a información de películas y series de alta calidad. Nuestro objetivo es ayudarte a descubrir contenido que realmente te importe, desde clásicos icónicos hasta los estrenos más recientes.</p>
+                    </div>
+
+                    <div class="about-section-item">
+                        <div class="about-icon">⭐</div>
+                        <h3>Quiénes Somos</h3>
+                        <p>CINEMAN es una plataforma de streaming agregadora fundada en 2023 por un equipo de cinéfilos apasionados. Con sede en Los Ángeles, contamos con más de 150 empleados dedicados a brindarte la mejor experiencia de búsqueda y recomendación de contenido audiovisual.</p>
+                    </div>
+
+                    <div class="about-section-item">
+                        <div class="about-icon">🚀</div>
+                        <h3>Nuestros Logros</h3>
+                        <p>Desde nuestro lanzamiento, hemos alcanzado 2 millones de usuarios activos en 45 países. Contamos con una base de datos de más de 500,000 títulos, incluyendo películas, series, documentales y contenido exclusivo.</p>
+                    </div>
+
+                    <div class="about-section-item">
+                        <div class="about-icon">🎯</div>
+                        <h3>Por Qué Elegir CineMan</h3>
+                        <p>Ofrecemos la experiencia más intuitiva para descubrir contenido, con algoritmos de recomendación personalizados, búsqueda avanzada por géneros y año, y un sistema de favoritos sincronizado. Todo sin anuncios intrusivos.</p>
+                    </div>
+
+                    <div class="about-section-item">
+                        <div class="about-icon">💡</div>
+                        <h3>Innovación Continua</h3>
+                        <p>Nuestro equipo de desarrolladores trabaja constantemente para mejorar tu experiencia. Cada mes introducimos nuevas funcionalidades basadas en el feedback de nuestra comunidad.</p>
+                    </div>
+
+                    <div class="about-section-item">
+                        <div class="about-icon">🌍</div>
+                        <h3>Impacto Global</h3>
+                        <p>Creemos en el poder del cine como medio de expresión universal. A través de CINEMAN, conectamos millones de personas alrededor del mundo con historias que inspiran, entretienen y transforman.</p>
+                    </div>
+                </div>
+
+                <div class="about-footer">
+                    <h3>Únete a Nuestra Comunidad</h3>
+                    <p>Explora miles de títulos, crea tu lista de favoritos y descubre tu próxima película o serie favorita con CINEMAN.</p>
+                    <button class="btn btn-primary" onclick="switchPage('home')">Volver al Inicio</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="search-section">
+            <div class="search-bar">
+                <input type="text" id="searchInput" placeholder="Buscar películas...">
+                <button id="searchBtn">Buscar</button>
+                <button id="clearBtn" style="display: none;" class="btn-clear">Limpiar</button>
+            </div>
+        </section>
+
+        <section id="movies-section">
+            <h2>Películas Populares</h2>
+            <div class="movies-container">
+                <button id="prevBtn" class="nav-arrow nav-arrow-left">‹</button>
+                <div id="moviesGrid" class="movies-grid"></div>
+                <button id="nextBtn" class="nav-arrow nav-arrow-right">›</button>
+            </div>
+        </section>
+
+        <section id="series-section">
+            <h2>Series Populares</h2>
+            <div class="movies-container">
+                <button id="prevBtnSeries" class="nav-arrow nav-arrow-left">‹</button>
+                <div id="seriesGrid" class="movies-grid"></div>
+                <button id="nextBtnSeries" class="nav-arrow nav-arrow-right">›</button>
+            </div>
+        </section>
+
+        <section id="top-rated-movies-section">
+            <h2>Películas Mejor Valoradas</h2>
+            <div class="movies-container">
+                <button id="prevBtnTopRatedMovies" class="nav-arrow nav-arrow-left">‹</button>
+                <div id="topRatedMoviesGrid" class="movies-grid"></div>
+                <button id="nextBtnTopRatedMovies" class="nav-arrow nav-arrow-right">›</button>
+            </div>
+        </section>
+
+        <section id="top-rated-series-section">
+            <h2>Series Mejor Valoradas</h2>
+            <div class="movies-container">
+                <button id="prevBtnTopRatedSeries" class="nav-arrow nav-arrow-left">‹</button>
+                <div id="topRatedSeriesGrid" class="movies-grid"></div>
+                <button id="nextBtnTopRatedSeries" class="nav-arrow nav-arrow-right">›</button>
+            </div>
+        </section>
+
+        <section id="favorites-section" style="display: none;">
+            <h2>Mis Favoritos</h2>
+            <div id="favoritesGrid" class="movies-grid"></div>
+        </section>
+
+        <section id="all-movies-section" style="display: none;">
+            <h2>Películas</h2>
+            <div class="movies-container">
+                <button id="prevBtnAllMovies" class="nav-arrow nav-arrow-left">‹</button>
+                <div id="allMoviesGrid" class="movies-grid"></div>
+                <button id="nextBtnAllMovies" class="nav-arrow nav-arrow-right">›</button>
+            </div>
+        </section>
+
+        <section id="all-series-section" style="display: none;">
+            <h2>Series</h2>
+            <div class="movies-container">
+                <button id="prevBtnAllSeries" class="nav-arrow nav-arrow-left">‹</button>
+                <div id="allSeriesGrid" class="movies-grid"></div>
+                <button id="nextBtnAllSeries" class="nav-arrow nav-arrow-right">›</button>
+            </div>
+        </section>
+
+        <section id="settings-section" style="display: none;">
+            <h2>Configuración</h2>
+            <div class="settings-container">
+                <div class="settings-group">
+                    <h3>Cuenta</h3>
+                    <div class="setting-item">
+                        <div class="setting-label">
+                            <span class="setting-title">Nombre de Usuario</span>
+                            <span class="setting-value">Joaquin Barro</span>
+                        </div>
+                        <button class="setting-btn">Cambiar</button>
+                    </div>
+                    <div class="setting-item">
+                        <div class="setting-label">
+                            <span class="setting-title">Email</span>
+                            <span class="setting-value">IngJoaquinBarro@gmail.com</span>
+                        </div>
+                        <button class="setting-btn">Cambiar</button>
+                    </div>
+                    <div class="setting-item">
+                        <div class="setting-label">
+                            <span class="setting-title">Contraseña</span>
+                            <span class="setting-value">••••••••</span>
+                        </div>
+                        <button class="setting-btn">Cambiar</button>
+                    </div>
+                </div>
+
+                <div class="settings-group">
+                    <h3>Preferencias</h3>
+                    <div class="setting-item">
+                        <div class="setting-label">
+                            <span class="setting-title">Idioma</span>
+                            <span class="setting-value">Español</span>
+                        </div>
+                        <button class="setting-btn">Cambiar</button>
+                    </div>
+                    <div class="setting-item">
+                        <div class="setting-label">
+                            <span class="setting-title">Modo Oscuro</span>
+                            <span class="setting-value">Activado</span>
+                        </div>
+                        <button class="setting-btn">Desactivar</button>
+                    </div>
+                    <div class="setting-item">
+                        <div class="setting-label">
+                            <span class="setting-title">Notificaciones</span>
+                            <span class="setting-value">Activadas</span>
+                        </div>
+                        <button class="setting-btn">Desactivar</button>
+                    </div>
+                </div>
+
+                <div class="settings-group">
+                    <h3>Privacidad y Seguridad</h3>
+                    <div class="setting-item">
+                        <div class="setting-label">
+                            <span class="setting-title">Perfil Privado</span>
+                            <span class="setting-value">Desactivado</span>
+                        </div>
+                        <button class="setting-btn">Activar</button>
+                    </div>
+                    <div class="setting-item">
+                        <div class="setting-label">
+                            <span class="setting-title">Compartir Historial</span>
+                            <span class="setting-value">Activado</span>
+                        </div>
+                        <button class="setting-btn">Desactivar</button>
+                    </div>
+                </div>
+
+                <div class="settings-group">
+                    <h3>Otras Opciones</h3>
+                    <div class="setting-item">
+                        <div class="setting-label">
+                            <span class="setting-title">Limpiar Historial</span>
+                            <span class="setting-value">Última limpieza: hace 7 días</span>
+                        </div>
+                        <button class="setting-btn danger">Limpiar Ahora</button>
+                    </div>
+                    <div class="setting-item">
+                        <div class="setting-label">
+                            <span class="setting-title">Descargar Datos</span>
+                            <span class="setting-value">Exportar tu información</span>
+                        </div>
+                        <button class="setting-btn">Descargar</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Custom Notification Container -->
+    <div id="notificationContainer"></div>
+
+    <div id="movieModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="movieDetails"></div>
+        </div>
+    </div>
+
+
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-text">
+                <p>&copy; Joaquin Barro - CINEMAN. Derechos Reservados.</p>
+            </div>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/joaquinbarro/" target="_blank">LinkedIn</a>
+                <a href="#" target="_blank">GitHub</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/app.js"></script>
+</body>
+</html>
