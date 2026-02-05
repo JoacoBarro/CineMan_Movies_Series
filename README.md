@@ -47,6 +47,21 @@ In a production environment, this would be handled through a backend service or 
 
 ---
 
+## ⚙️ How to Run
+
+1. Clone the repository
+2. Open the project folder
+3. Open the html folder
+4. Open *'login.html'*
+     
+   **Username**: admin  
+   **Password**: admin123
+
+No build steps, dependencies, or server setup required.
+The application runs entirely on the client side.
+   
+---
+
 ## 📌 Purpose
 
 CINEMAN was built as a **portfolio project** to demonstrate:
